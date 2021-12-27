@@ -5,19 +5,40 @@
 <link rel="stylesheet" href="css/spectre-icons.min.css">
 <link rel="stylesheet" href="css/spectre.min.css">
 <title>GuAlert Bot</title>
+<meta charset="UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
 <body>
-<div class="container grid-lg" style="margin-top: 2rem;">
-    <div class="col-mx-auto">
+<div class="container grid-md" style="margin-top: 2rem;">
         <header class="navbar">
             <section class="navbar-section">
               <span class="navbar-brand mr-2" style="font-size: 30px; font-weight: 700;">GuAlert </span>
               <span style="font-size: 30px;">🤖</span>
             </section>
-            <section class="navbar-section">
-              <a href="..." class="btn btn-link">Guide</a>
-              <a href="..." class="btn btn-link">Commands</a>
-              <a href="..." class="btn btn-link">Contacts</a>
+            <section class="navbar-section show-xs text-right" style="margin-right: 1rem;">
+              <button class="btn btn-action" id='navbar-button' style="border-color: #3b4351;"><i class="icon icon-menu" style="color: #3b4351;"></i></button>
+              <ul class="nav" id="navbar-menu" 
+                style="display: none; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, monospace;
+                font-weight: 700;">
+                <li class="nav-item">
+                  <a href="#guide" style="color: #5755d9;">Guide</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#commands" style="color: #5755d9;">Commands</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#contacts" style="color: #5755d9;">Contacts</a>
+                </li>
+              </ul>
+            </section>
+            <section class="navbar-section hide-xs" 
+              style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, monospace;
+              font-weight: 700;">
+              <a href="#guide" class="btn btn-link">Guide</a>
+              <a href="#commands" class="btn btn-link">Commands</a>
+              <a href="#contacts" class="btn btn-link">Contacts</a>
             </section>
         </header>
         <div class="divider" style="margin: 0.7rem 0; border-top: solid 0.3rem #f1f3f5;"></div>
@@ -44,7 +65,7 @@
             <p>Ooops, the price is back up. You have to wait, again. You need to find a solution. <strong>GuAlert</strong>🤖 <strong>can become your solution</strong> 😎</p>
           </div>
           <br><br><br>
-          <div>
+          <div id="guide">
             <h4>I'm only a poor mortal, can you explain me how to use GuAlert🤖?</h4>
             <br>
             <p>Sure, GuAlert🤖 uses telegram bot technology, so just download the app and add @guAlertBot. After that, follow these simple steps to start interacting with the bot:</p>
@@ -57,7 +78,7 @@
             <p>Remember, you can always get the list of the cards you are following and decide whether to delete one of them to stop receiving notifications from GuAlert🤖</p>
           </div>
           <br><br><br>
-          <div>
+          <div id="commands">
             <h4>Good introduction, can you also give me the list of commands avaiable?</h4>
             <br>
             <p>Yep, the commands list is also avaiable directrly in Telegram but replace another this is also a good idea 🙂</p>
@@ -93,7 +114,7 @@
             </table>
           </div>
           <br><br><br>
-          <div>
+          <div id="contacts">
             <h4>Ok I'm ready to use GuAlert🤖, but where can I contact you if I have a question?</h4>
             <p>For now you can join our <a href="#">Discord</a> channel and send a question in support section. If you want, you can also give us a feedback to improve our product and stay tuned for the next announcements.</p>
             <p>We hope to publicate this little features ASAP:</p>
@@ -105,18 +126,29 @@
             <br>
             <h6>We are appasionate group of Gods Unchained and we think that GuAlert it's just the start, new intersting things will coming soon🌠</h6>
           </div>
-    </div>
     <br><br><br>
 </div>
 <div style="background-color: #f1f3f5;">
-    <div class="container grid-lg">
+    <div class="container grid-md">
       <div class="columns" style="padding: 50px 0;">
       <div class="column text-center"><a href="#" style="color: #3b4351;">LEGACY</a></div>
-      <div class="column text-center">PRIVACY</div>
-      <div class="column text-center">col-2</div>
-      <div class="column text-center">col-1</div>
+      <div class="column text-center"><a href="#" style="color: #3b4351;">PRIVACY</a></div>
+      <div class="column text-center"><a href="#" style="color: #3b4351;">TELEGRAM</a></div>
+      <div class="column text-center"><a href="#" style="color: #3b4351;">DISCORD</a></div>
     </div>
   </div>
 </div>
+<script>
+  function displayMenu() {
+    if (document.getElementById("navbar-menu").style.display == 'none') {
+      document.getElementById("navbar-menu").style.display = 'block'
+    }
+    else {
+      document.getElementById("navbar-menu").style.display = 'none'
+    } 
+
+  }
+  document.getElementById("navbar-button").addEventListener("click", displayMenu);
+</script>
 </body>
 </html>
